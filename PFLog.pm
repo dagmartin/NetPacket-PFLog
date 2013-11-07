@@ -108,7 +108,7 @@ sub decode {
 	$self->{_frame} = $pkt;
 
 	# based on pfloghdr struct in:
-	# [OpenBSD]/src/sys/net/if_pflog.h v1.14
+	# [OpenBSD]/src/sys/net/if_pflog.h v1.17
 	if (defined $pkt) {
 		($len, $af, $action, $reason, $ifname, $ruleset, $rulenr, 
 			$subrulenr, $uid, $pid, $rule_uid, $rule_pid, $dir, 
@@ -197,7 +197,7 @@ sub encode {
 	}
 
 	# based on pfloghdr struct in:
-	# [OpenBSD]/src/sys/net/if_pflog.h v1.12
+	# [OpenBSD]/src/sys/net/if_pflog.h v1.17
 	my $packet = pack("CCCCa16a16NNIiIiCCa2NNNNNNNNnna*",
 		$self->{len}, $self->{af}, $action, $reason, $self->{ifname}, 
 		$self->{ruleset}, $self->{rulenr}, $self->{subrulenr},
