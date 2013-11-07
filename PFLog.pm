@@ -193,7 +193,7 @@ sub encode {
 		($self->{af} == 24) && do {
 			@src_ip = NetPacket::IPv6::hexstr_to_int($self->{src_ip});
 			@dst_ip = NetPacket::IPv6::hexstr_to_int($self->{dst_ip});
-		}
+		};
 	}
 
 	# based on pfloghdr struct in:
